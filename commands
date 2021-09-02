@@ -1,0 +1,12 @@
+docker build -t sigil-py:x64 -f ./Dockerfile .
+
+docker run --cap-add SYS_ADMIN --device /dev/fuse --mount src=$PWD,dst=/work,type=bind sigil-py:x64 ./script.sh --appdir AppDir
+
+docker run --rm --cap-add SYS_ADMIN --device /dev/fuse --mount src=$PWD,dst=/work,type=bind sigil-py:x64
+
+
+find /dir/to/search/ -type d -name "dirName" -exec rm -rf {} +
+
+
+tar cJvf archive.tar.xz AppDir
+
