@@ -18,7 +18,6 @@ ENV OPENSSL_DIR="${HOME}/openssl/${OPENSSL}"                                    
     TCL_DIR="${HOME}/tcl/${TCLTK}"                                              \
     TK_DIR="${HOME}/tk/${TCLTK}"
 
-RUN pwd && ls -la
 RUN ./install.sh
 
 ENV PATH="${OPENSSL_DIR}/bin:${PATH}"                                                       \
