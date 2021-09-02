@@ -38,7 +38,7 @@ jobs:
           context: .
           push: false
           builder: ${{ steps.buildx.outputs.name }}
-          #load: true
+          load: true
           tags: dmassay/sigil-linux-python:latest
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new
