@@ -19,6 +19,8 @@ jobs:
       - name: Set up Docker Buildx
         id: buildx
         uses: docker/setup-buildx-action@v1
+        with:
+          install: true
 
       # So now you can use Actions' own caching!
       - name: Cache Docker layers
@@ -36,7 +38,7 @@ jobs:
           context: .
           push: false
           builder: ${{ steps.buildx.outputs.name }}
-          load: true
+          #load: true
           tags: dmassay/sigil-linux-python:latest
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new
