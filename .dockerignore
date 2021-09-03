@@ -1,0 +1,14 @@
+# ignore .git and .cache folders
+.git
+.gitignore
+.github
+AppDir
+commands
+.cache
+*.DS_Store
+
+*~
+*.swp
+*.swo
+*.gz
+*.xz

@@ -10,7 +10,8 @@ fi
 # Configuration variables
 NPROC="${NPROC:-$(nproc)}"
 PIP_OPTIONS="${PIP_OPTIONS:---upgrade}"
-PIP_REQUIREMENTS="six==1.15.0 html5lib==1.1 regex==2020.6.8 css-parser==1.0.4 cssselect==1.1.0 urllib3==1.25.9 certifi==2020.6.20 dulwich==0.20.5 chardet==3.0.4 pillow==7.1.2 PyQt5==5.12.3 PyQt5-sip==4.19.19 PyQtWebEngine==5.12.1 lxml==4.5.1"
+PIP_REQUIREMENTS="${PIP_REQUIREMENTS:-}"
+#"six==1.15.0 html5lib==1.1 regex==2020.6.8 css-parser==1.0.4 cssselect==1.1.0 urllib3==1.25.9 certifi==2020.6.20 dulwich==0.20.5 chardet==3.0.4 pillow==7.1.2 PyQt5==5.12.3 PyQt5-sip==4.19.19 PyQtWebEngine==5.12.1 lxml==4.5.1"
 PYTHON_BUILD_DIR="${PYTHON_BUILD_DIR:-}"
 PYTHON_CONFIG="${PYTHON_CONFIG:-}"
 version="3.8.3"
@@ -165,8 +166,8 @@ cd "$APPDIR/${prefix}"
 rm -rf "bin/python"*"-config" "bin/idle"* "lib/pkgconfig" \
        "share/doc" "share/man" "lib/libpython"*".a" "lib/python"*"/test" \
        "lib/python"*"/config-"*"-x86_64-linux-gnu" \
-       "lib/python3"*"/site-packages/PyQt5/Qt" \
-       "lib/python3"*"/site-packages/PyQt5/uic/port_v2"
+       #"lib/python3"*"/site-packages/PyQt5/Qt" \
+       #"lib/python3"*"/site-packages/PyQt5/uic/port_v2"
 
 
 # Wrap the Python executables

@@ -1,11 +1,14 @@
 docker build -t sigil-py:x64 -f ./Dockerfile .
 
+docker build -t dougmassay/linux-sigil-python_x86_64:2021-09-02 .
+
 docker run --cap-add SYS_ADMIN --device /dev/fuse --mount src=$PWD,dst=/work,type=bind sigil-py:x64 ./script.sh --appdir AppDir
 
-docker run --rm --cap-add SYS_ADMIN --device /dev/fuse --mount src=$PWD,dst=/work,type=bind sigil-py:x64
+docker run --rm --cap-add SYS_ADMIN --device /dev/fuse --mount src=$PWD,dst=/work,type=bind dougmassay/linux-sigil-python_x86_64:2021-09-02
 
+docker run --rm -v $PWD:/work --user "$(id -u):$(id -g)" dougmassay/linux-sigil-python_x86_64:2021-09-02
 
-find /dir/to/search/ -type d -name "dirName" -exec rm -rf {} +
+find AppDir -type d -name "__pycache__" -exec rm -rf {} +
 
 
 tar cJvf archive.tar.xz AppDir

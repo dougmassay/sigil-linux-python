@@ -1,4 +1,4 @@
-FROM quay.io/pypa/manylinux2014_x86_64
+FROM quay.io/pypa/manylinux2014_x86_64:2021-08-31-6f90a75
 LABEL maintainer="https://github.com/dougmassay"
 
 ARG Arch=x86_64
